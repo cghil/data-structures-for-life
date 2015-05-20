@@ -1,5 +1,26 @@
 require 'pry'
 
+class Stack
+	attr_accessor :container
+	def initialize
+		@container = []
+	end
+	def peek
+		@container[-1] #looks at the last one
+	end
+	def pop
+		@container.delete_at(-1) #gives you the last element of a node
+	end
+	def push(value)
+		@container.push(value) #pushes at the end of the array
+	end
+
+	def is_empty?
+		peek == nil
+	end
+
+end
+
 module Mixin
 	def [](position)
 		current_node = @head
@@ -43,6 +64,10 @@ module Mixin
 		until next_node == nil
 			stack_that_linked_list.push(next_node)
 			next_node = next_node.next
+		end
+		until stack_that_linked_list.is_empty?
+			stack_item = stack_that_linked_list.pop
+			puts stack_item.value
 		end
 	end
 
@@ -105,25 +130,6 @@ class LinkedList
 	include Mixin
 end
 
-class Stack
-	def initialize
-		@container = []
-	end
-	def peek
-		@store[-1] #looks at the last one
-	end
-	def pop
-		@store.delete_at[-1] #gives you the last element of a node
-	end
-	def push(value)
-		@store.push(value) #pushes at the end of the array
-	end
-
-	def is_empty?
-		peek == nil
-	end
-
-end
 
 
 
