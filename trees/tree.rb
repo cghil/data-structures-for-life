@@ -1,4 +1,4 @@
-require 'pry'
+
 class Node
 	attr_accessor :value, :children
 
@@ -50,6 +50,10 @@ class Tree
 		end
 		nil
 	end
+
+	def max_branch(node=self.root)
+
+	end
 end
 
 node_foo = Node.new(1)
@@ -60,4 +64,3 @@ node_foo.add_child(node_bang)
 node_foo.add_child(node_bar_box)
 node_bar_box.add_child(node_baz_box)
 tree = Tree.new(node_foo)
-binding.pry
