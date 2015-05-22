@@ -1,3 +1,10 @@
+#how to run rspec
+# 1. make sure to have a Gemfile to hold the gem rspec
+#note: this can be done with a bundle init then write gem rspec within the file
+# 2. run bundle install to make sure that gems are loaded for the running of the rspec file
+# 3. make sure you are in the spec folder to run a specific rspec file ... ex. rspec tree_spec.rb
+
+
 require_relative '../tree'
 
 describe Tree do
