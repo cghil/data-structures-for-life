@@ -1,6 +1,6 @@
 require_relative '../tree'
 
-describe Tree do
+describe TreeNode do
 	let(:value) { 1 }
 	let(:other_value) { 2 }
 	let(:node) { Node.new(value)}
