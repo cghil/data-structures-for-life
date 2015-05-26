@@ -1,4 +1,4 @@
-require 'pry'
+
 class Node
 	attr_accessor :data
 	attr_accessor :next
@@ -30,9 +30,8 @@ class List
 	end
 end
 
-node2 = Node.new(2)
-node = Node.new(1, node2)
+node = Node.new(1)
+node2 = Node.new(2, node)
 list = List.new()
 list.head = node
 
-binding.pry
