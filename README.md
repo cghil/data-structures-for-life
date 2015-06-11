@@ -1,1 +1,4 @@
-# linked_list
+# Linked List
+# Sorting
+# Stack
+# Tree

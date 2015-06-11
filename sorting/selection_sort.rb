@@ -1,7 +1,7 @@
 require 'pry'
 non_sorted_array = [9, 8, 6, 1, 2, 5, 4, 3, 9, 50, 12, 11] #value of the last number's index
 
-def fuck_it(array)
+def selection_sort(array)
 	p array
 	n = array.size - 1
 	n.times do |i|
@@ -18,4 +18,4 @@ def fuck_it(array)
 end
 
 # p selection_sort(non_sorted_array)
-p fuck_it(non_sorted_array)
+p selection_sort(non_sorted_array)
