@@ -1,5 +1,3 @@
-require 'pry'
-
 class Directory
 	attr_accessor :name, :children
 	def initialize(name)
@@ -37,11 +35,11 @@ root_dir.add(book_report)
 drafts = Directory.new('drafts')
 book_report.add(drafts)
 drafts.add(Directory.new('final'))
-
-object = root_dir.cd('bookreport/drafts/final') #[bookreport, drafts, final]
-p object.name
 # /documents
 #    /empty_folder
 #    /bookreport
 #        /drafts
 #        	  /final_drafts
+
+object = root_dir.cd('bookreport/drafts/final') #[bookreport, drafts, final]
+p object

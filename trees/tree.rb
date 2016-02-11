@@ -23,10 +23,10 @@ class Tree
 	def depth_first_search(value, node =self.root)
 		stack = [node]
 		until stack.empty?
-			current_node = stack.shift
+			current_node = stack.pop
 			children = current_node.children
 			children.each do |child|
-				stack.unshift(child)
+				stack.push(child)
 			end
 			if current_node.value == value
 				return current_node
@@ -35,6 +35,18 @@ class Tree
 			end
 		end
 	end
+	# [a] a -> [b, c], b -> [d,e]
+	# step 1
+	# [] returns a
+	# [b, c] pushes children
+	# Step 2
+	# [b] returns c
+	# c has no children so nothing gets push on to the stack
+	# [] returns b
+	# b has children so [d, e] are added to the stack
+	# Step 3
+	# e gets poped
+
 
 	def breath_first_search(value, node=self.root)
 		queue = [node]
