@@ -28,43 +28,24 @@ def find_largest_node(root)
 	end
 end
 
+def find_second_largest(root)
+	parent = root
 
-class Explore
-	def self.find_second_largest_node(root)
-		parent = root
-		right_child = parent.right
-		if Explore.check_for_right(right_child)
-			find_second_largest_node(right_child)
-		else
-			return parent
-		end
+	return nil if !parent
+
+	if !parent.right && parent.left
+		return find_largest_node(parent.left)
 	end
 
-	private
-
-	def self.check_for_right(parent)
-		if parent.right
-			return true
-		else
-			return false
-		end
+	if parent.right && !parent.right.left && !parent.right.right
+		return parent.value
 	end
 
-	def self.check_for_left(parent)
-		if parent.left
-			return true
-		else
-			return false
-		end
-	end
-
+	return find_second_largest(parent.right)
 end
 
 
 root = BinaryTreeNode.new(10)
 right = root.insert_right(100)
 grandchild = right.insert_right(109)
-
-node = Explore.find_second_largest_node(root)
-puts node.value
 
